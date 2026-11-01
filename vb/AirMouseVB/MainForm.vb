@@ -27,13 +27,27 @@ Public Class MainForm
     Private _fps As Double = 0
     Private _lastTick As Long = 0
 
+    ''' <summary>
+    ''' Constructor. MUST call InitializeComponent() so the designer actually
+    ''' creates the controls (cboCamera, buttons, etc.) before any event such
+    ''' as Load runs. Without this, those controls are Nothing and accessing
+    ''' them throws a NullReferenceException.
+    ''' </summary>
+    Public Sub New()
+        InitializeComponent()
+    End Sub
+
     ' ----------------------------------------------------------------------
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Populate camera list (probe indices 0..3).
-        For i = 0 To 3
-            cboCamera.Items.Add("Camera " & i)
-        Next
-        If cboCamera.Items.Count > 0 Then cboCamera.SelectedIndex = 0
+        ' Populate camera list (offer indices 0..3; the actual device is
+        ' validated when Start is pressed).
+        If cboCamera IsNot Nothing Then
+            cboCamera.Items.Clear()
+            For i = 0 To 3
+                cboCamera.Items.Add("Camera " & i)
+            Next
+            cboCamera.SelectedIndex = 0
+        End If
 
         lblStatus.Text = "Ready. Screen: " & _mouse.ScreenWidth & "x" & _mouse.ScreenHeight &
                          ". Press Start."
