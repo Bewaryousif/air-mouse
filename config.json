@@ -1,0 +1,23 @@
+{
+  "camera_index": 0,
+  "frame_width": 640,
+  "frame_height": 480,
+  "flip_horizontal": true,
+  "max_hands": 1,
+  "detection_confidence": 0.7,
+  "tracking_confidence": 0.6,
+  "frame_margin": 100,
+  "smoothing": 5.0,
+  "move_deadzone": 1.5,
+  "pinch_threshold": 0.05,
+  "right_click_threshold": 0.05,
+  "double_click_window": 0.4,
+  "click_cooldown": 0.3,
+  "drag_hold_time": 0.35,
+  "scroll_speed": 40,
+  "scroll_deadzone": 0.04,
+  "show_window": true,
+  "show_landmarks": true,
+  "window_title": "Air Mouse  —  webcam gesture control",
+  "failsafe": true
+}
