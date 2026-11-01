@@ -1,10 +1,12 @@
 # Air Mouse dependencies
 # Install with:  pip install -r requirements.txt
 #
-# Tested with Python 3.9 - 3.11 (MediaPipe does not yet support 3.12+ on all
-# platforms; use a 3.11 virtual environment for best results).
+# Supported Python versions: 3.9, 3.10, 3.11, 3.12  (3.11 recommended).
+# MediaPipe does NOT ship wheels for Python 3.13 or newer, so install
+# will fail on those. Use the one-click setup.bat which auto-picks a
+# compatible interpreter.
 
 opencv-python>=4.8.0
-mediapipe>=0.10.9
+mediapipe>=0.10.14
 pyautogui>=0.9.54
 numpy>=1.24.0

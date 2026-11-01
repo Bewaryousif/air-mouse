@@ -59,6 +59,18 @@ test, and extend.
 
 ## 🚀 Getting started
 
+### Option 0 — One‑click (easiest on Windows) ⭐
+
+1. Install **Python 3.11** from
+   [python.org](https://www.python.org/downloads/release/python-3119/) and tick
+   **"Add Python to PATH"** during install. *(3.9–3.12 all work; 3.13+ does not —
+   MediaPipe has no wheels for it yet.)*
+2. Double‑click **`setup.bat`** — it finds a compatible Python, creates a virtual
+   environment, and installs everything automatically.
+3. Double‑click **`run.bat`** to start the air mouse.
+
+That's it. No Visual Studio configuration required.
+
 ### Option A — Visual Studio (recommended on Windows)
 
 1. Install **Python 3.11** and the **Python development** workload in the
@@ -115,7 +127,7 @@ Edit `config.json` to tune behaviour without changing code. Key settings:
 
 ## 🧰 Requirements
 
-- **Python 3.9 – 3.11** (MediaPipe support is best on ≤ 3.11).
+- **Python 3.9 – 3.12** (3.11 recommended; **3.13+ is not supported** by MediaPipe).
 - A working **webcam**.
 - Windows, macOS, or Linux. (Tested primarily on Windows; PyAutoGUI works
   cross‑platform.)
@@ -124,6 +136,15 @@ Edit `config.json` to tune behaviour without changing code. Key settings:
 
 ## 🛟 Troubleshooting
 
+- **Visual Studio: "Failed to launch debugger" / "environment … appears to be
+  incorrectly configured or missing"** — the Python version the project points
+  at is not installed. Fix it by selecting an installed, compatible environment:
+  **Tools → Python → Python Environments**, add/select a **Python 3.9–3.12**
+  environment (3.11 recommended), then install `requirements.txt` into it.
+  Or just skip Visual Studio and use **`setup.bat`** + **`run.bat`**.
+- **`pip install mediapipe` fails / "No matching distribution"** — you are on
+  Python **3.13 or newer**, which MediaPipe does not support yet. Install
+  Python **3.11** and use that. `setup.bat` picks a compatible version for you.
 - **"Could not open webcam"** — another app may be using the camera, or the
   index is wrong. Try `--camera 1`, `--camera 2`, etc.
 - **Cursor is jittery** — increase `smoothing` in `config.json`.

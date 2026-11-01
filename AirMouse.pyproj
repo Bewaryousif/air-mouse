@@ -11,7 +11,9 @@
     <OutputPath>.</OutputPath>
     <Name>AirMouse</Name>
     <RootNamespace>AirMouse</RootNamespace>
-    <InterpreterId>Global|PythonCore|3.11</InterpreterId>
+    <!-- No interpreter is hard-coded on purpose. Visual Studio will use the
+         environment you select for the project. Pick a Python 3.9 - 3.12
+         environment (3.11 recommended). MediaPipe does NOT support 3.13+. -->
     <LaunchProvider>Standard Python launcher</LaunchProvider>
     <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
   </PropertyGroup>
@@ -40,6 +42,8 @@
     <Content Include="requirements.txt" />
     <Content Include="README.md" />
     <Content Include="config.json" />
+    <Content Include="setup.bat" />
+    <Content Include="run.bat" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
 </Project>
